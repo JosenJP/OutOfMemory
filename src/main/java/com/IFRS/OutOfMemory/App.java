@@ -1,21 +1,24 @@
 package com.IFRS.OutOfMemory;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
 /**
  * Hello world!
  *
  */
 public class App 
-{
+{   
     public static void main( String[] args )
     {
-    	List<Memory> l_MemoryList = new ArrayList<Memory>();
-        while (true)
+        Host host = new Host();
+        try
         {
-        	Memory l_Memory = new Memory();
-        	l_MemoryList.add(l_Memory);
+            host.Run();
+        } 
+        catch (IOException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
     }
 }
